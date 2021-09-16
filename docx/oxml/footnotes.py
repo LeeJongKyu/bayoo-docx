@@ -26,8 +26,9 @@ class CT_Footnotes(BaseOxmlElement):
 
         return int(ids[-1]) + 1
     
-    def add_footnote(self):
+    def add_footnote1(self):
         _next_id = self._next_id
+        _next_id.font.superscript = True
         footnote = CT_Footnote.new(_next_id)
         footnote = self._insert_footnote(footnote)
         return footnote
